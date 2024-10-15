@@ -14,9 +14,16 @@ function formatChunk(
 ): string {
     const timestamp = new Date().toISOString();
     const marker = direction === "in" ? "<<<" : ">>>";
-    const formatted = type === "text" ? chunk.toString('utf-8')
-        : (chunk.toString('hex').match(/../g)?.join(' ') || '');
-    return `[${timestamp}] ${marker} ${formatted}\n`;
+    if (type === "text") {
+        const lines = chunk.toString('utf-8').replace(/\r?\n$/, '').split(/\r?\n/);
+        if (lines.length == 0 || lines.filter(line => line.length != 0).length == 0) {
+            return "";
+        }
+        return lines.map(line => `[${timestamp}] ${marker} ${line}`).join('\n') + '\n';
+    } else {
+        const formatted = (chunk.toString('hex').match(/../g)?.join(' ') || '');
+        return `[${timestamp}] ${marker} ${formatted}\n`;
+    }
 }
 
 function main(
