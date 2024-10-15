@@ -1,6 +1,6 @@
 {
   "name": "@u1f992/pantychef",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "bin": {
     "pantychef": "dist/cli.js"
