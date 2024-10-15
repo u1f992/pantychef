@@ -10,9 +10,7 @@ Snoop on bi-directional communication between the target serial port and the tar
 ```mermaid
 flowchart LR
     A["Target Serial Port"] --> B["Pantychef"]
-    B --> C["Null Modem<br>(com0com/socat)"]
-    C --> D["Target Application"]
-    D --> C
+    B --"Null Modem<br>(com0com/socat)"--> C["Target Application"]
     C --> B
     B --> A
 ```
