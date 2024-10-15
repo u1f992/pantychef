@@ -13,7 +13,7 @@ function formatChunk(
     type: "text" | "binary"
 ): string {
     const timestamp = new Date().toISOString();
-    const marker = direction === "in" ? "<<<" : ">>>";
+    const marker = direction === "in" ? "<--" : "-->";
     if (type === "text") {
         const lines = chunk.toString('utf-8').replace(/\r?\n$/, '').split(/\r?\n/);
         if (lines.length == 0 || lines.filter(line => line.length != 0).length == 0) {
