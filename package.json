@@ -1,0 +1,26 @@
+{
+  "name": "@u1f992/pantychef",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "pantychef": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx src/cli.ts"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/u1f992/pantychef",
+  "author": "Koutaro Mukai",
+  "license": "GPL-3.0",
+  "description": "Snoop on bi-directional communication between the target serial port and the target application, used in conjunction with a null modem.",
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "serialport": "^12.0.0"
+  }
+}
